@@ -10,9 +10,14 @@ import UIKit
 
 class TaskInfoVC: UIViewController {
 
+    var task: Task!
+    
+    @IBOutlet weak var TaskName: UILabel!
+    @IBOutlet weak var TaskCount: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        TaskName.text = task.name
+        TaskCount.text = String(task.count)
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +26,10 @@ class TaskInfoVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func backPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
