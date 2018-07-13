@@ -8,22 +8,39 @@
 
 import UIKit
 
-class TaskInfoVC: UIViewController {
+class TaskInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     var task: Task!
+    var progressDates :[String]!
+    let data = DataBaseManager()
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var TaskName: UILabel!
     @IBOutlet weak var TaskCount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         TaskName.text = task.name
         TaskCount.text = String(task.count)
+        progressDates = [String](task.progress.keys)
+        progressDates.sort{$0 > $1}
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return task.progress.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "infoForDate", for: indexPath)
+        cell.textLabel?.text = data.reverseDate(date: progressDates[indexPath.row])
+        cell.detailTextLabel?.text = String(task.progress[progressDates[indexPath.row]]!) + "/" + String(task.count)
+        return cell
     }
     
     @IBAction func backPressed(_ sender: Any) {

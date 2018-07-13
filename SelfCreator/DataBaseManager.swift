@@ -22,4 +22,28 @@ class DataBaseManager
         let array = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [Task]
         return array
     }
+    
+    func getDate(date: Date) -> String{
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy.MM.dd"
+        return dateFormatter.string(from: date)
+    }
+    func todayProgressCheck(key: String){
+        let tempArray = dearchive(key: key)
+        for(task) in tempArray{
+            if (task.progress[getDate(date: Date())] == nil){
+                task.progress[getDate(date: Date())] = 0
+            }
+        }
+        archive(array: tempArray, key: key)
+    }
+    
+    func reverseDate(date: String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = ("dd.MM.yy")
+        let tempDate = dateFormatter.date(from: date)
+        dateFormatter.dateFormat = ("yy.MM.dd")
+        return dateFormatter.string(from: tempDate!)
+    }
 }
