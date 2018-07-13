@@ -15,8 +15,6 @@ class TaskTable: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,11 +29,6 @@ class TaskTable: UITableViewController {
             data.archive(array: tasks, key: "taskArray")
         }
         tableView.reloadData()
-    }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 
 

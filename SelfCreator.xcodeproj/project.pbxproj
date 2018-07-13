@@ -12,6 +12,8 @@
 		23153CE820F737C90032E7EB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23153CE720F737C90032E7EB /* Task.swift */; };
 		23153CEA20F74BC20032E7EB /* TaskInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23153CE920F74BC20032E7EB /* TaskInfoVC.swift */; };
 		23153CEC20F772860032E7EB /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23153CEB20F772860032E7EB /* DataBaseManager.swift */; };
+		23153CEE20F88FB40032E7EB /* TodayStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23153CED20F88FB40032E7EB /* TodayStatusViewController.swift */; };
+		23153CF020F89B7A0032E7EB /* CurrentDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23153CEF20F89B7A0032E7EB /* CurrentDateViewController.swift */; };
 		235D431220F5EB25006AA0B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D431120F5EB25006AA0B8 /* AppDelegate.swift */; };
 		235D431420F5EB25006AA0B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D431320F5EB25006AA0B8 /* ViewController.swift */; };
 		235D431720F5EB25006AA0B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235D431520F5EB25006AA0B8 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		23153CE720F737C90032E7EB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		23153CE920F74BC20032E7EB /* TaskInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoVC.swift; sourceTree = "<group>"; };
 		23153CEB20F772860032E7EB /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		23153CED20F88FB40032E7EB /* TodayStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStatusViewController.swift; sourceTree = "<group>"; };
+		23153CEF20F89B7A0032E7EB /* CurrentDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateViewController.swift; sourceTree = "<group>"; };
 		235D430E20F5EB25006AA0B8 /* SelfCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235D431120F5EB25006AA0B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		235D431320F5EB25006AA0B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,14 +71,16 @@
 				235D431120F5EB25006AA0B8 /* AppDelegate.swift */,
 				235D431320F5EB25006AA0B8 /* ViewController.swift */,
 				235D431520F5EB25006AA0B8 /* Main.storyboard */,
-				23153CE520F7371D0032E7EB /* TaskAddViewController.swift */,
-				23153CE920F74BC20032E7EB /* TaskInfoVC.swift */,
-				23153CEB20F772860032E7EB /* DataBaseManager.swift */,
 				23153CE720F737C90032E7EB /* Task.swift */,
 				23153CE320F735D60032E7EB /* TaskTable.swift */,
+				23153CE520F7371D0032E7EB /* TaskAddViewController.swift */,
+				23153CE920F74BC20032E7EB /* TaskInfoVC.swift */,
+				23153CED20F88FB40032E7EB /* TodayStatusViewController.swift */,
+				23153CEF20F89B7A0032E7EB /* CurrentDateViewController.swift */,
 				235D431820F5EB27006AA0B8 /* Assets.xcassets */,
 				235D431A20F5EB27006AA0B8 /* LaunchScreen.storyboard */,
 				235D431D20F5EB27006AA0B8 /* Info.plist */,
+				23153CEB20F772860032E7EB /* DataBaseManager.swift */,
 			);
 			path = SelfCreator;
 			sourceTree = "<group>";
@@ -154,8 +160,10 @@
 				23153CEA20F74BC20032E7EB /* TaskInfoVC.swift in Sources */,
 				23153CE620F7371D0032E7EB /* TaskAddViewController.swift in Sources */,
 				23153CE820F737C90032E7EB /* Task.swift in Sources */,
+				23153CF020F89B7A0032E7EB /* CurrentDateViewController.swift in Sources */,
 				23153CEC20F772860032E7EB /* DataBaseManager.swift in Sources */,
 				235D431420F5EB25006AA0B8 /* ViewController.swift in Sources */,
+				23153CEE20F88FB40032E7EB /* TodayStatusViewController.swift in Sources */,
 				235D431220F5EB25006AA0B8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,18 +1,19 @@
 //
-//  TaskAddViewController.swift
+//  CurrentDateViewController.swift
 //  SelfCreator
 //
-//  Created by itisioslab on 12.07.2018.
+//  Created by itisioslab on 13.07.2018.
 //  Copyright © 2018 FirstGroupCompany. All rights reserved.
 //
 
 import UIKit
 
-class TaskAddViewController: UIViewController {
+class CurrentDateViewController: UIViewController {
+
+    var taskRow: Int!
     
-    
-    @IBOutlet weak var TaskName: UITextField!
-    @IBOutlet weak var TaskCount: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var progressField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,22 +25,20 @@ class TaskAddViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
-
-    @IBAction func SaveTask(_ sender: Any) {
-        let tempTask = Task.init(name: TaskName.text!, count: Int(TaskCount.text!)!)
-        let data = DataBaseManager()
-        var tempArray = data.dearchive(key: "taskArray")
-        tempArray.append(tempTask)
-        data.archive(array: tempArray, key: "taskArray")
-        dismiss(animated: true, completion: nil)
-    }
-    
     
     @IBAction func cancelPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func savePressed(_ sender: Any) {
+        let data = DataBaseManager()
+        let date = datePicker.date
+        var tempArray = data.dearchive(key: "taskArray")
+        tempArray[taskRow].progress[data.getDate(date: date)] = Int(progressField.text!)
+        data.archive(array: tempArray, key: "taskArray")
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
