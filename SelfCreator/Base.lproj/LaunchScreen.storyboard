@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone 7 Plus" translatesAutoresizingMaskIntoConstraints="NO" id="tmW-Wk-gh0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone 7 Plus Copy" translatesAutoresizingMaskIntoConstraints="NO" id="tmW-Wk-gh0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -33,6 +33,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iPhone 7 Plus" width="1035" height="1840"/>
+        <image name="iPhone 7 Plus Copy" width="1656" height="2944"/>
     </resources>
 </document>
