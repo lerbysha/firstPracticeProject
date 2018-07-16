@@ -21,7 +21,12 @@ class TaskInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         TaskName.text = task.name
-        TaskCount.text = String(task.count)
+        if(task.isSimple){
+            TaskCount.text = "Simple Task"
+        }
+        else{
+            TaskCount.text = String(task.count)
+        }
         progressDates = [String](task.progress.keys)
         progressDates.sort{$0 > $1}
         // Do any additional setup after loading the view.
@@ -39,7 +44,17 @@ class TaskInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "infoForDate", for: indexPath)
         cell.textLabel?.text = data.reverseDate(date: progressDates[indexPath.row])
-        cell.detailTextLabel?.text = String(task.progress[progressDates[indexPath.row]]!) + "/" + String(task.count)
+        if (task.isSimple){
+            if (task.progress[progressDates[indexPath.row]] == 0){
+                cell.detailTextLabel?.text = "Not Completed"
+            }
+            else{
+                cell.detailTextLabel?.text = "Completed"
+            }
+        }
+        else{
+            cell.detailTextLabel?.text = String(task.progress[progressDates[indexPath.row]]!) + "/" + String(task.count)
+        }
         return cell
     }
     
