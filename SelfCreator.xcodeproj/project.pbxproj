@@ -19,6 +19,7 @@
 		235D431720F5EB25006AA0B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235D431520F5EB25006AA0B8 /* Main.storyboard */; };
 		235D431920F5EB27006AA0B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235D431820F5EB27006AA0B8 /* Assets.xcassets */; };
 		235D431C20F5EB27006AA0B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235D431A20F5EB27006AA0B8 /* LaunchScreen.storyboard */; };
+		236A1CB820FCBB5D00EC2451 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236A1CB720FCBB5D00EC2451 /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		235D431820F5EB27006AA0B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		235D431B20F5EB27006AA0B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		235D431D20F5EB27006AA0B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		236A1CB720FCBB5D00EC2451 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				23153CE320F735D60032E7EB /* TaskTable.swift */,
 				23153CE520F7371D0032E7EB /* TaskAddViewController.swift */,
 				23153CE920F74BC20032E7EB /* TaskInfoVC.swift */,
+				236A1CB720FCBB5D00EC2451 /* GraphView.swift */,
 				23153CED20F88FB40032E7EB /* TodayStatusViewController.swift */,
 				23153CEF20F89B7A0032E7EB /* CurrentDateViewController.swift */,
 				235D431820F5EB27006AA0B8 /* Assets.xcassets */,
@@ -161,6 +164,7 @@
 				23153CE620F7371D0032E7EB /* TaskAddViewController.swift in Sources */,
 				23153CE820F737C90032E7EB /* Task.swift in Sources */,
 				23153CF020F89B7A0032E7EB /* CurrentDateViewController.swift in Sources */,
+				236A1CB820FCBB5D00EC2451 /* GraphView.swift in Sources */,
 				23153CEC20F772860032E7EB /* DataBaseManager.swift in Sources */,
 				235D431420F5EB25006AA0B8 /* ViewController.swift in Sources */,
 				23153CEE20F88FB40032E7EB /* TodayStatusViewController.swift in Sources */,

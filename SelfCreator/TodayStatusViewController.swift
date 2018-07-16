@@ -50,7 +50,18 @@ class TodayStatusViewController: UIViewController, UITableViewDelegate, UITableV
         
         let model = taskArray[indexPath.row]
         cell.textLabel?.text = model.name
-        cell.detailTextLabel?.text = String(model.progress[data.getDate(date: Date())]!) + "/" + String(model.count)
+        if (model.isSimple){
+            if (model.progress[data.getDate(date: Date())] == 0){
+                cell.detailTextLabel?.text = "Not Completed"
+            }
+            else{
+                cell.detailTextLabel?.text = "Completed"
+            }
+        }
+        else{
+            cell.detailTextLabel?.text = String(model.progress[data.getDate(date: Date())]!) + "/" + String(model.count)
+        }
+        
         return cell
     }
     
