@@ -11,13 +11,16 @@ import UIKit
 class CurrentDateViewController: UIViewController {
 
     var taskRow: Int!
+    var currentTaskCount: Int!
     
+    @IBOutlet weak var isCompletedSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var progressField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let data = DataBaseManager()
+        currentTaskCount = data.dearchive(key: "taskArray")[taskRow].count
         // Do any additional setup after loading the view.
     }
 
@@ -39,6 +42,16 @@ class CurrentDateViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func changeStatus(_ sender: Any) {
+        if (isCompletedSwitch.isOn){
+            progressField.text = String(currentTaskCount)
+            progressField.isEnabled = false
+        }
+        else{
+            progressField.text = nil
+            progressField.isEnabled = true
+        }
+    }
     /*
     // MARK: - Navigation
 

@@ -13,10 +13,11 @@ class TaskAddViewController: UIViewController {
     
     @IBOutlet weak var TaskName: UITextField!
     @IBOutlet weak var TaskCount: UITextField!
+    @IBOutlet weak var TaskType: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        TaskType.isOn = false
         // Do any additional setup after loading the view.
     }
 
@@ -28,7 +29,7 @@ class TaskAddViewController: UIViewController {
     
 
     @IBAction func SaveTask(_ sender: Any) {
-        let tempTask = Task.init(name: TaskName.text!, count: Int(TaskCount.text!)!)
+        let tempTask = Task.init(name: TaskName.text!, count: Int(TaskCount.text!)!, isSimple: TaskType.isOn)
         let data = DataBaseManager()
         var tempArray = data.dearchive(key: "taskArray")
         tempArray.append(tempTask)
@@ -40,6 +41,18 @@ class TaskAddViewController: UIViewController {
     @IBAction func cancelPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func changeTaskType(_ sender: Any) {
+        if (TaskType.isOn){
+            TaskCount.text = String(1)
+            TaskCount.isEnabled = false
+        }
+        else{
+            TaskCount.text = nil
+            TaskCount.isEnabled = true
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
