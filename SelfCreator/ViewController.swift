@@ -11,11 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    @IBOutlet weak var maxLabel: UILabel!
-    @IBOutlet weak var averageWaterDrunk: UILabel!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var graphView: GraphView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var graphView: GraphView!
+    @IBOutlet weak var averageWaterDrunk: UILabel!
+    @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
