@@ -49,7 +49,7 @@ class TaskTable: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = taskArray[indexPath.row]
         performSegue(withIdentifier: "auth", sender: model)
     }

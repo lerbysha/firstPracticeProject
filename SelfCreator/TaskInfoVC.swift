@@ -59,7 +59,7 @@ class TaskInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     @IBAction func backPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        
     }
     
     /*

@@ -16,9 +16,31 @@ import UIKit
     @IBInspectable var endColor: UIColor = .green
     
     //Weekly sample data
-    var graphPoints: [Int] = [4, 2, 6, 4, 5, 8, 3]
+    var taskArray: [Task]!
+    var graphPoints: [Double] = [0,0,0,0,0,0,0]
     
     override func draw(_ rect: CGRect) {
+        
+        graphPoints = [0,0,0,0,0,0,0]
+        var countSums = [0,0,0,0,0,0,0]
+        let data = DataBaseManager()
+        taskArray = data.dearchive(key: "taskArray")
+        for task in taskArray{
+            var dateArray = [String](task.progress.keys)
+            dateArray.sort{$0 > $1}
+            for i in 0..<min(dateArray.count, 7)
+            {
+                graphPoints[i] += Double(task.progress[dateArray[i]]!)
+                countSums[i] += task.count
+            }
+        }
+        for i in 0..<graphPoints.count
+        {
+            if (countSums[i] != 0){
+                graphPoints[i] /= Double(countSums[i])
+            }
+        }
+        graphPoints.reverse()
         
         let width = rect.width
         let height = rect.height
@@ -65,7 +87,7 @@ import UIKit
         let topBorder: CGFloat = Constants.topBorder
         let bottomBorder: CGFloat = Constants.bottomBorder
         let graphHeight = height - topBorder - bottomBorder
-        let maxValue = graphPoints.max()!
+        let maxValue = Int(graphPoints.max()!*100)
         let columnYPoint = { (graphPoint:Int) -> CGFloat in
             var y:CGFloat = CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight
             y = graphHeight + topBorder - y // Flip the graph
@@ -79,12 +101,12 @@ import UIKit
         //set up the points line
         let graphPath = UIBezierPath()
         //go to start of line
-        graphPath.move(to: CGPoint(x:columnXPoint(0), y:columnYPoint(graphPoints[0])))
+        graphPath.move(to: CGPoint(x:columnXPoint(0), y:columnYPoint(Int(graphPoints[0]*100))))
         
         //add points for each item in the graphPoints array
         //at the correct (x, y) for the point
         for i in 1..<graphPoints.count {
-            let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+            let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(Int(graphPoints[i]*100)))
             graphPath.addLine(to: nextPoint)
         }
         
@@ -117,7 +139,7 @@ import UIKit
         
         //Draw the circles on top of graph stroke
         for i in 0..<graphPoints.count {
-            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(graphPoints[i]))
+            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(Int(graphPoints[i]*100)))
             point.x -= Constants.circleDiameter / 2
             point.y -= Constants.circleDiameter / 2
             
