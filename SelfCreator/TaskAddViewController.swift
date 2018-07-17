@@ -45,11 +45,11 @@ class TaskAddViewController: UIViewController {
     @IBAction func changeTaskType(_ sender: Any) {
         if (TaskType.isOn){
             TaskCount.text = String(1)
-            TaskCount.isEnabled = false
+            TaskCount.isHidden = true
         }
         else{
             TaskCount.text = nil
-            TaskCount.isEnabled = true
+            TaskCount.isHidden = false
         }
     }
     

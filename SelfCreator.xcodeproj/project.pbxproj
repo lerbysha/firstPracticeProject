@@ -18,8 +18,8 @@
 		235D431420F5EB25006AA0B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D431320F5EB25006AA0B8 /* ViewController.swift */; };
 		235D431720F5EB25006AA0B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235D431520F5EB25006AA0B8 /* Main.storyboard */; };
 		235D431920F5EB27006AA0B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235D431820F5EB27006AA0B8 /* Assets.xcassets */; };
-		235D431C20F5EB27006AA0B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235D431A20F5EB27006AA0B8 /* LaunchScreen.storyboard */; };
 		236A1CB820FCBB5D00EC2451 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236A1CB720FCBB5D00EC2451 /* GraphView.swift */; };
+		236A1CBC20FE14EA00EC2451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236A1CBB20FE14EA00EC2451 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +35,9 @@
 		235D431320F5EB25006AA0B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		235D431620F5EB25006AA0B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		235D431820F5EB27006AA0B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		235D431B20F5EB27006AA0B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		235D431D20F5EB27006AA0B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		236A1CB720FCBB5D00EC2451 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		236A1CBB20FE14EA00EC2451 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,8 @@
 				236A1CB720FCBB5D00EC2451 /* GraphView.swift */,
 				23153CED20F88FB40032E7EB /* TodayStatusViewController.swift */,
 				23153CEF20F89B7A0032E7EB /* CurrentDateViewController.swift */,
+				236A1CBB20FE14EA00EC2451 /* LaunchScreen.storyboard */,
 				235D431820F5EB27006AA0B8 /* Assets.xcassets */,
-				235D431A20F5EB27006AA0B8 /* LaunchScreen.storyboard */,
 				235D431D20F5EB27006AA0B8 /* Info.plist */,
 				23153CEB20F772860032E7EB /* DataBaseManager.swift */,
 			);
@@ -146,7 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				235D431C20F5EB27006AA0B8 /* LaunchScreen.storyboard in Resources */,
+				236A1CBC20FE14EA00EC2451 /* LaunchScreen.storyboard in Resources */,
 				235D431920F5EB27006AA0B8 /* Assets.xcassets in Resources */,
 				235D431720F5EB25006AA0B8 /* Main.storyboard in Resources */,
 			);
@@ -181,14 +181,6 @@
 				235D431620F5EB25006AA0B8 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		235D431A20F5EB27006AA0B8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				235D431B20F5EB27006AA0B8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -313,6 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H9M9JGU32C;
 				INFOPLIST_FILE = SelfCreator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -331,6 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H9M9JGU32C;
 				INFOPLIST_FILE = SelfCreator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

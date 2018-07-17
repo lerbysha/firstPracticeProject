@@ -11,7 +11,7 @@ import UIKit
 class CurrentDateViewController: UIViewController {
 
     var taskRow: Int!
-    var currentTaskCount: Int!
+    var currentTask: Task!
     
     @IBOutlet weak var isCompletedSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -20,7 +20,10 @@ class CurrentDateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let data = DataBaseManager()
-        currentTaskCount = data.dearchive(key: "taskArray")[taskRow].count
+        currentTask = data.dearchive(key: "taskArray")[taskRow]
+        if (currentTask.isSimple){
+            progressField.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -44,12 +47,16 @@ class CurrentDateViewController: UIViewController {
     
     @IBAction func changeStatus(_ sender: Any) {
         if (isCompletedSwitch.isOn){
-            progressField.text = String(currentTaskCount)
-            progressField.isEnabled = false
+            progressField.text = String(currentTask.count)
+            if (!currentTask.isSimple){
+                progressField.isHidden = false
+            }
         }
         else{
             progressField.text = nil
-            progressField.isEnabled = true
+            if (currentTask.isSimple){
+                progressField.isHidden = true
+            }
         }
     }
     /*

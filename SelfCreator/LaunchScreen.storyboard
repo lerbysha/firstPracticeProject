@@ -18,18 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iPhone 7 Plus Copy" translatesAutoresizingMaskIntoConstraints="NO" id="tmW-Wk-gh0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone 7 Plus Copy" translatesAutoresizingMaskIntoConstraints="NO" id="le2-37-QHT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="le2-37-QHT" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="bKl-0V-FEm"/>
+                            <constraint firstItem="le2-37-QHT" firstAttribute="bottom" secondItem="Bcu-3y-fUS" secondAttribute="bottom" id="cbD-mj-UPx"/>
+                            <constraint firstItem="le2-37-QHT" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gs2-jL-u3r"/>
+                            <constraint firstItem="le2-37-QHT" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="snq-w3-gf7"/>
+                            <constraint firstItem="le2-37-QHT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zfi-K1-qid"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
     <resources>

@@ -65,7 +65,7 @@ class TodayStatusViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = indexPath.row
         performSegue(withIdentifier: "setForCurrentDate", sender: model)
     }

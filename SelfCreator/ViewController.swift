@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var graphView: GraphView!
@@ -19,21 +18,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGraphDisplay()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupGraphDisplay()
     }
 
     func setupGraphDisplay() {
         
         let maxDayIndex = stackView.arrangedSubviews.count - 1
         graphView.setNeedsDisplay()
-        maxLabel.text = "\(graphView.graphPoints.max()!)"
+        maxLabel.text = "\(100)%"
         //3 - calculate average from graphPoints
-        let average = graphView.graphPoints.reduce(0, +) / graphView.graphPoints.count
+        let average = graphView.graphPoints.reduce(0, +) / Double(graphView.graphPoints.count) * 100
         averageWaterDrunk.text = "\(average)"
         
         //4 - setup date formatter and calendar
