@@ -29,6 +29,7 @@ class DataBaseManager
         dateFormatter.dateFormat = "yy.MM.dd"
         return dateFormatter.string(from: date)
     }
+    
     func todayProgressCheck(key: String){
         let tempArray = dearchive(key: key)
         for(task) in tempArray{

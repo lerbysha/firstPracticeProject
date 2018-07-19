@@ -17,6 +17,7 @@ class TodayStatusViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = .clear
 
         // Do any additional setup after loading the view.
     }
@@ -59,7 +60,7 @@ class TodayStatusViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         else{
-            cell.detailTextLabel?.text = String(model.progress[data.getDate(date: Date())]!) + "/" + String(model.count)
+            cell.detailTextLabel?.text = String(model.progress[data.getDate(date: Date())]!) + "/" + String(model.count) + " \(model.quantities)"
         }
         
         return cell
