@@ -15,6 +15,7 @@ class TaskTable: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundView = UIImageView(image: UIImage(named: "minimalizm-fotograf-Dzhulian-Shultse_20"))
     }
     
     override func viewDidAppear(_ animated: Bool) {

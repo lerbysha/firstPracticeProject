@@ -14,22 +14,17 @@ class TaskAddViewController: UIViewController {
     @IBOutlet weak var TaskName: UITextField!
     @IBOutlet weak var TaskCount: UITextField!
     @IBOutlet weak var TaskType: UISwitch!
+    @IBOutlet weak var quantities: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         TaskType.isOn = false
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     
 
     @IBAction func SaveTask(_ sender: Any) {
-        let tempTask = Task.init(name: TaskName.text!, count: Int(TaskCount.text!)!, isSimple: TaskType.isOn)
+        let tempTask = Task.init(name: TaskName.text!, count: Int(TaskCount.text!)!, isSimple: TaskType.isOn, quantities: quantities.text!)
         let data = DataBaseManager()
         var tempArray = data.dearchive(key: "taskArray")
         tempArray.append(tempTask)
@@ -45,11 +40,15 @@ class TaskAddViewController: UIViewController {
     @IBAction func changeTaskType(_ sender: Any) {
         if (TaskType.isOn){
             TaskCount.text = String(1)
+            quantities.text = ""
             TaskCount.isHidden = true
+            quantities.isHidden = true
         }
         else{
             TaskCount.text = nil
+            quantities.text = nil
             TaskCount.isHidden = false
+            quantities.isHidden = false
         }
     }
     

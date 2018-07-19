@@ -17,15 +17,19 @@ class TaskInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var TaskName: UILabel!
     @IBOutlet weak var TaskCount: UILabel!
+    @IBOutlet weak var taskQuantities: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = .clear
         TaskName.text = task.name
         if(task.isSimple){
             TaskCount.text = "Simple Task"
+            taskQuantities.isHidden = true
         }
         else{
             TaskCount.text = String(task.count)
+            taskQuantities.text = task.quantities
         }
         progressDates = [String](task.progress.keys)
         progressDates.sort{$0 > $1}
@@ -56,10 +60,6 @@ class TaskInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
             cell.detailTextLabel?.text = String(task.progress[progressDates[indexPath.row]]!) + "/" + String(task.count)
         }
         return cell
-    }
-    
-    @IBAction func backPressed(_ sender: Any) {
-        
     }
     
     /*

@@ -37,7 +37,7 @@ import UIKit
         for i in 0..<graphPoints.count
         {
             if (countSums[i] != 0){
-                graphPoints[i] /= Double(countSums[i])
+                graphPoints[i] /= Double(countSums[i]) / 100
             }
         }
         graphPoints.reverse()
@@ -87,7 +87,7 @@ import UIKit
         let topBorder: CGFloat = Constants.topBorder
         let bottomBorder: CGFloat = Constants.bottomBorder
         let graphHeight = height - topBorder - bottomBorder
-        let maxValue = Int(graphPoints.max()!*100)
+        let maxValue = Int(graphPoints.max()!)
         let columnYPoint = { (graphPoint:Int) -> CGFloat in
             var y:CGFloat = CGFloat(graphPoint) / CGFloat(maxValue) * graphHeight
             y = graphHeight + topBorder - y // Flip the graph
@@ -101,12 +101,12 @@ import UIKit
         //set up the points line
         let graphPath = UIBezierPath()
         //go to start of line
-        graphPath.move(to: CGPoint(x:columnXPoint(0), y:columnYPoint(Int(graphPoints[0]*100))))
+        graphPath.move(to: CGPoint(x:columnXPoint(0), y:columnYPoint(Int(graphPoints[0]))))
         
         //add points for each item in the graphPoints array
         //at the correct (x, y) for the point
         for i in 1..<graphPoints.count {
-            let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(Int(graphPoints[i]*100)))
+            let nextPoint = CGPoint(x:columnXPoint(i), y:columnYPoint(Int(graphPoints[i])))
             graphPath.addLine(to: nextPoint)
         }
         
@@ -139,7 +139,7 @@ import UIKit
         
         //Draw the circles on top of graph stroke
         for i in 0..<graphPoints.count {
-            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(Int(graphPoints[i]*100)))
+            var point = CGPoint(x:columnXPoint(i), y:columnYPoint(Int(graphPoints[i])))
             point.x -= Constants.circleDiameter / 2
             point.y -= Constants.circleDiameter / 2
             

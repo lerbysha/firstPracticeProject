@@ -16,20 +16,20 @@ class CurrentDateViewController: UIViewController {
     @IBOutlet weak var isCompletedSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var progressField: UITextField!
+    @IBOutlet weak var quantities: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let data = DataBaseManager()
+        datePicker.maximumDate = Date()
         currentTask = data.dearchive(key: "taskArray")[taskRow]
         if (currentTask.isSimple){
             progressField.isHidden = true
+            quantities.isHidden = true
         }
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        else{
+            quantities.text = currentTask.quantities
+        }
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
@@ -49,13 +49,13 @@ class CurrentDateViewController: UIViewController {
         if (isCompletedSwitch.isOn){
             progressField.text = String(currentTask.count)
             if (!currentTask.isSimple){
-                progressField.isHidden = false
+                progressField.isEnabled = false
             }
         }
         else{
             progressField.text = nil
             if (currentTask.isSimple){
-                progressField.isHidden = true
+                progressField.isEnabled = true
             }
         }
     }
